@@ -12,7 +12,7 @@ Welcome I am [Samir Ahmad](https://github.com/SamirAhmad5445) and this is a solu
   - [Built with](#build-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-- [Find Me On](#find-me-on)
+- [My Accounts](#my-accounts)
   - [Gmaill](mailto:samirahmad5445@gmail.com)
   - [GitHub](https://github.com/SamirAhmad5445)
   - [Frontend Mentor](https://www.frontendmentor.io/profile/SamirAhmad5445)
@@ -25,9 +25,9 @@ Welcome I am [Samir Ahmad](https://github.com/SamirAhmad5445) and this is a solu
 
 Users should be able to:
 
-- See the size of the elements adjust based on their device's screen size
 - Perform mathmatical operations like addition, subtraction, multiplication, and division
 - Adjust the color theme based on their preference
+- The Theme that been selected is Saved in the local storage
 
 ### Screenshot
 
@@ -36,11 +36,11 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Go To The Github Repo](https://github.com/SamirAhmad5445/calculator-app-main)
-- Live Site URL: [Click Here To View The Live Page](https://samirahmad5445.github.io/calculator-app-main/)
+- Live Site URL: [Click Here for The Live Page](https://samirahmad5445.github.io/calculator-app-main/)
 
-## My process
+## My Process
 
-### Built with
+### Built With
 
 - Semantic HTML5 markup
 - CSS custom properties
@@ -50,9 +50,9 @@ Users should be able to:
 - CSS Grid
 - Vaneilla JavaScript
 
-### What I learned
+### What I Learned
 
-In This challenge I had learned how to use the naming convention [CUBE CSS](https://cube.fyi/), It is So much easier than to use data attributes insteed of the double dash like BEM and also the utilities comes in handy a lot with the layout or the composition classes and i planning to use [CUBE CSS](https://cube.fyi/) as my main naming convention.
+In This challenge I learned how to use the naming convention [CUBE CSS](https://cube.fyi/), It is So much easier to use data attributes insteed of the double dash like BEM and also the utility classes come in handy a lot with the layout or the composition classes and I am planning to use [CUBE CSS](https://cube.fyi/) as my main naming convention.
 
 Here is Some Code Snippets from My Solution:
 
@@ -84,7 +84,7 @@ Here is Some Code Snippets from My Solution:
 :where(.toggle:has(#fancy:checked), .fancy .toggle)::after {
   left: calc(100% - 3.75 * var(--toggle-gap));
 }
-/* NOTE: By Using the :where() Pseudo class we  */
+/* NOTE: By Using the :where() Pseudo class we reduce the specificity  */
 ```
 
 - A Function To Get The Theme From The Local Storage
@@ -101,11 +101,11 @@ const getTheme = function () {
 };
 ```
 
-### Continued development
+### Continued Development
 
 I would learn more about SASS and the CSS Preprossers and also I would like to get into the world of JavaScript Frameworks and inprove my frontend skills with Good Fundamentals, Practical Applications, and by learning more technologies like PostCSS and gulp to increase the efficience of my code.
 
-## find me on
+## My Accounts
 
 - GitHub - [@SamirAhmad5445](https://github.com/SamirAhmad5445)
 - Gmaill - [samirahmad5445@gmail.com](samirahmad5445@gmail.com)
