@@ -1,5 +1,5 @@
 /* 1: The Dark Theme (default) */
-html:is(:has(#dark:checked), .dark) {
+:root {
   /* backgrounds */
   --bg-primary: hsl(222, 26%, 31%);
   --bg-neutral: hsl(223, 31%, 20%);
@@ -239,18 +239,19 @@ body {
   border-radius: 50%;
   transition: 350ms;
 }
-:is(.toggle:has(#dark:checked), .dark .toggle)::after {
+.toggle::after {
   left: calc(0.75 * var(--toggle-gap));
 }
-:is(.toggle:has(#light:checked), .light .toggle)::after {
+:where(.toggle:has(#light:checked), .light .toggle)::after {
   left: calc(50% - 1.5 * var(--toggle-gap));
 }
-:is(.toggle:has(#fancy:checked), .fancy .toggle)::after {
+:where(.toggle:has(#fancy:checked), .fancy .toggle)::after {
   left: calc(100% - 3.75 * var(--toggle-gap));
 }
 .toggle input[type="radio"] {
   flex: 1;
   position: relative;
+  cursor: pointer;
   opacity: 0;
 }
 .toggle label {
