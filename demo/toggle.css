@@ -1,0 +1,98 @@
+:root {
+		--bg-body: hsl(222, 26%, 31%);
+		--bg-toggle: hsl(223, 31%, 20%);
+		--clr-toggle: hsl(6, 63%, 50%);
+		--clr-body: hsl(0, 0%, 100%);
+}
+:root:has(#light:checked) {
+		--bg-body: hsl(0, 0%, 90%);
+		--bg-toggle: hsl(0, 5%, 81%);
+		--clr-toggle: hsl(25, 98%, 40%);
+		--clr-body: hsl(60, 10%, 19%);
+}
+:root:has(#fancy:checked) {
+		--bg-body: hsl(268, 75%, 9%);
+		--bg-toggle: hsl(268, 71%, 12%);
+		--clr-toggle: hsl(176, 100%, 44%);
+		--clr-body: hsl(52, 100%, 62%);
+}
+* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+}
+html,
+body {
+		height: 100%;
+}
+body {
+		position: relative;
+		background-color: var(--bg-body);
+		color: var(--clr-body);
+		
+}
+.toggle-wrapper {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1.125rem;
+}
+p {
+		font-size: 1rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-align: right;
+		padding: 1rem;
+}
+.toggle {
+		--gap: .5rem;
+		height: 2rem;
+		aspect-ratio: 3 / 1;
+		background-color: var(--bg-toggle);
+		padding: 0.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		border-radius: 100vh;
+}
+.toggle::after {
+		content: "";
+		position: absolute;
+		height: calc( 100% - var(--gap) );
+		aspect-ratio: 1;
+		background-color: var(--clr-toggle);
+		border-radius: 50%;
+		transition: 350ms;
+}
+.toggle:has(#dark:checked)::after {
+		left: calc(.5 * var(--gap));
+}
+.toggle:has(#light:checked)::after {
+		left: calc(50% - 1.5 * var(--gap));
+}
+.toggle:has(#fancy:checked)::after {
+		left: calc(100% - 3.5 * var(--gap));
+}
+.toggle input[type="radio"] {
+		flex: 1;
+		position: relative;
+		opacity: 0;
+}
+.toggle label {
+		position: absolute;
+		top: -1.5rem;
+		font-size: 1rem;
+		font-weight: bold;
+		transition: 0;
+}
+.toggle label:first-of-type {
+		left: .75rem;
+}
+.toggle label:last-of-type {
+		right: .75rem;
+}

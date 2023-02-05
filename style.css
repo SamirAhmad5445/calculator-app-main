@@ -1,0 +1,279 @@
+/* 1: The Dark Theme (default) */
+html:is(:has(#dark:checked), .dark) {
+  /* backgrounds */
+  --bg-primary: hsl(222, 26%, 31%);
+  --bg-neutral: hsl(223, 31%, 20%);
+  --bg-accent: hsl(224, 36%, 15%);
+  /* keys and toggle */
+  --key-primary: hsl(30, 25%, 89%);
+  --hover-primary: hsl(30, 25%, 100%);
+  --shadow-primary: hsl(28, 16%, 65%);
+  --key-neutral: hsl(225, 21%, 49%);
+  --hover-neutral: hsl(225, 21%, 60%);
+  --shadow-neutral: hsl(224, 28%, 35%);
+  --key-accent: hsl(6, 63%, 50%);
+  --hover-accent: hsl(6, 63%, 60%);
+  --shadow-accent: hsl(6, 70%, 34%);
+  /* typography */
+  --txt-primary: hsl(221, 14%, 31%);
+  --txt-neutral: hsl(0, 0%, 100%);
+  --txt-accent: var(--txt-neutral);
+  --txt-base: var(--txt-neutral);
+}
+/* 2: The Light Theme */
+html:is(:has(#light:checked), .light) {
+  /* backgrounds */
+  --bg-primary: hsl(0, 0%, 90%);
+  --bg-neutral: hsl(0, 5%, 81%);
+  --bg-accent: hsl(0, 0%, 93%);
+  /* keys and toggle */
+  --key-primary: hsl(45, 7%, 89%);
+  --hover-primary: hsl(45, 7%, 100%);
+  --shadow-primary: hsl(35, 11%, 61%);
+  --key-neutral: hsl(185, 42%, 37%);
+  --hover-neutral: hsl(185, 42%, 47%);
+  --shadow-neutral: hsl(185, 58%, 25%);
+  --key-accent: hsl(25, 98%, 40%);
+  --hover-accent: hsl(25, 98%, 60%);
+  --shadow-accent: hsl(25, 99%, 27%);
+  /* typography */
+  --txt-primary: hsl(60, 10%, 19%);
+  --txt-neutral: hsl(0, 0%, 100%);
+  --txt-accent: var(--txt-neutral);
+  --txt-base: var(--txt-primary);
+}
+/* 3: The Fancy Theme */
+html:is(:has(#fancy:checked), .fancy) {
+  /* backgrounds */
+  --bg-primary: hsl(268, 75%, 9%);
+  --bg-neutral: hsl(268, 71%, 12%);
+  --bg-accent: var(--bg-neutral);
+  /* keys and toggle */
+  --key-primary: hsl(268, 47%, 21%);
+  --hover-primary: hsl(268, 47%, 41%);
+  --shadow-primary: hsl(290, 70%, 36%);
+  --key-neutral: hsl(281, 89%, 26%);
+  --hover-neutral: hsl(281, 89%, 40%);
+  --shadow-neutral: hsl(285, 91%, 52%);
+  --key-accent: hsl(176, 100%, 44%);
+  --hover-accent: hsl(176, 100%, 64%);
+  --shadow-accent: hsl(177, 92%, 70%);
+  /* typography */
+  --txt-primary: hsl(52, 100%, 62%);
+  --txt-neutral: hsl(0, 0%, 100%);
+  --txt-accent: hsl(198, 20%, 13%);
+  --txt-base: var(--txt-primary);
+}
+
+/* general styles */
+html,
+body {
+  height: 100%;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherite;
+}
+body {
+  --fs-base: 2.125rem;
+  display: grid;
+  place-items: center;
+  background-color: var(--bg-primary);
+  color: var(--txt-base);
+  font-family: "League Spartan", sans-serif;
+  font-size: var(--fs-base);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* composition */
+.flex-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--flex-gap, 0);
+}
+.grid-group {
+  --grid-gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: var(--grid-gap);
+  padding: calc(2 * var(--grid-gap));
+  place-items: center;
+}
+.flow > :where(:not(:first-child)) {
+  --flow-spacer: 1.5rem;
+  margin-top: var(--flow-spacer, 2rem);
+}
+
+/* utilities */
+.pad-1 {
+  padding: 1rem;
+}
+.pad-2 {
+  padding: 2rem;
+}
+.pad-3 {
+  padding: 3rem;
+}
+.rad-1 {
+  border-radius: 0.5rem;
+}
+.rad-2 {
+  border-radius: 1rem;
+}
+.rad-3 {
+  border-radius: 100vh;
+}
+.push-top {
+  margin-top: -1rem;
+}
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+.bg-neutral {
+  background-color: var(--bg-neutral);
+}
+.bg-accent {
+  background-color: var(--bg-accent);
+}
+.txt-primary {
+  color: var(--txt-primary);
+}
+.txt-neutral {
+  color: var(--txt-neutral);
+}
+.txt-accent {
+  color: var(--txt-accent);
+}
+.txt-small {
+  font-size: 0.8125rem;
+}
+.txt-lowercase {
+  text-transform: lowercase;
+}
+.span-2 {
+  grid-column: span 2;
+}
+
+/* block level */
+.calculator {
+  min-width: 375px;
+  margin-inline: auto;
+}
+@media (min-width: 40em) {
+  .calculator {
+    transform: scale(0.8);
+  }
+}
+.screen {
+  width: 16ch;
+  text-align: end;
+  font-size: 2.5rem;
+  overflow-x: auto;
+}
+/* components */
+/* calculator keys */
+.key {
+  background-color: var(--key-primary);
+  color: var(--txt-primary);
+  border: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  aspect-ratio: 1;
+  font-size: var(--fs-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem;
+  box-shadow: 0 4px 0 var(--shadow-primary);
+  cursor: pointer;
+}
+.key:where([data-type="accent"]) {
+  background-color: var(--key-accent);
+  color: var(--txt-accent);
+  box-shadow: 0 4px 0 var(--shadow-accent);
+  font-size: calc(0.75 * var(--fs-base));
+  aspect-ratio: 2.25 / 1;
+}
+.key:where([data-type="neutral"]) {
+  background-color: var(--key-neutral);
+  color: var(--txt-neutral);
+  box-shadow: 0 4px 0 var(--shadow-neutral);
+  font-size: calc(0.625 * var(--fs-base));
+}
+.key:where([data-type="neutral"].span-2) {
+  aspect-ratio: 2.25 / 1;
+}
+.key:hover {
+  background-color: var(--hover-primary);
+}
+.key:where([data-type="accent"]):hover {
+  background-color: var(--hover-accent);
+}
+.key:where([data-type="neutral"]):hover {
+  background-color: var(--hover-neutral);
+}
+/* three options theme toggle */
+.toggle {
+  --toggle-gap: calc(0.25 * var(--flex-gap));
+  height: 1.5rem;
+  aspect-ratio: 3 / 1;
+  background-color: var(--bg-neutral);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 100vh;
+}
+.toggle::after {
+  content: "";
+  position: absolute;
+  height: calc(100% - var(--toggle-gap));
+  aspect-ratio: 1;
+  background-color: var(--key-accent);
+  border-radius: 50%;
+  transition: 350ms;
+}
+:is(.toggle:has(#dark:checked), .dark .toggle)::after {
+  left: calc(0.75 * var(--toggle-gap));
+}
+:is(.toggle:has(#light:checked), .light .toggle)::after {
+  left: calc(50% - 1.5 * var(--toggle-gap));
+}
+:is(.toggle:has(#fancy:checked), .fancy .toggle)::after {
+  left: calc(100% - 3.75 * var(--toggle-gap));
+}
+.toggle input[type="radio"] {
+  flex: 1;
+  position: relative;
+  opacity: 0;
+}
+.toggle label {
+  position: absolute;
+  top: -1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.toggle label:first-of-type {
+  left: 0.75rem;
+}
+.toggle label:last-of-type {
+  right: 0.75rem;
+}
+
+/* styles from frontend mentor */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  text-transform: none;
+  position: fixed;
+  bottom: 1.5rem;
+}
+.attribution a {
+  color: var(--key-accent);
+}

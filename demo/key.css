@@ -1,0 +1,44 @@
+:root {
+		--bg-body: hsl(222, 26%, 31%);
+		--bg-toggle: hsl(223, 31%, 20%);
+		--clr-toggle: hsl(6, 63%, 50%);
+		--clr-body: hsl(0, 0%, 100%);
+}
+:root:has(#light) {
+		--bg-body: hsl(0, 0%, 90%);
+		--bg-toggle: hsl(0, 5%, 81%);
+		--clr-toggle: hsl(25, 98%, 40%);
+		--clr-body: hsl(60, 10%, 19%);
+}
+:root:has(#fancy) {
+		--bg-body: hsl(268, 75%, 9%);
+		--bg-toggle: hsl(268, 71%, 12%);
+		--clr-toggle: hsl(176, 100%, 44%);
+		--clr-body: hsl(52, 100%, 62%);
+}
+* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		transition: 200ms;
+}
+html,
+body {
+		height: 100%;
+}
+body {
+		position: relative;
+		background-color: var(--bg-body);
+		color: var(--clr-body);
+
+}
+.container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1.125rem;
+}
