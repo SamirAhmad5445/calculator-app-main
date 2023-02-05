@@ -17,8 +17,6 @@ Welcome I am [Samir Ahmad](https://github.com/SamirAhmad5445) and this is a solu
   - [GitHub](https://github.com/SamirAhmad5445)
   - [Frontend Mentor](https://www.frontendmentor.io/profile/SamirAhmad5445)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -72,7 +70,7 @@ Here is Some Code Snippets from My Solution:
 </div>
 ```
 
-- Using the :has() pseudo Class To Change The Posiotion Of the Toggle
+- Using the :has() pseudo Class To Change The Position Of the Toggle
 
 ```css
 .toggle::after {
