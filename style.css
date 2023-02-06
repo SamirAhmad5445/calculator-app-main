@@ -242,10 +242,10 @@ body {
 .toggle::after {
   left: calc(0.75 * var(--toggle-gap));
 }
-:where(.toggle:has(#light:checked), .light .toggle)::after {
+:is(.toggle:has(#light:checked), .light .toggle)::after {
   left: calc(50% - 1.5 * var(--toggle-gap));
 }
-:where(.toggle:has(#fancy:checked), .fancy .toggle)::after {
+:is(.toggle:has(#fancy:checked), .fancy .toggle)::after {
   left: calc(100% - 3.75 * var(--toggle-gap));
 }
 .toggle input[type="radio"] {

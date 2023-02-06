@@ -70,19 +70,18 @@ Here is Some Code Snippets from My Solution:
 </div>
 ```
 
-- Using the :has() pseudo Class To Change The Position Of the Toggle
+- Using the :has() and :is() pseudo Classes To Change The Position Of the Toggle
 
 ```css
 .toggle::after {
   left: calc(0.75 * var(--toggle-gap));
 }
-:where(.toggle:has(#light:checked), .light .toggle)::after {
+:is(.toggle:has(#light:checked), .light .toggle)::after {
   left: calc(50% - 1.5 * var(--toggle-gap));
 }
-:where(.toggle:has(#fancy:checked), .fancy .toggle)::after {
+:is(.toggle:has(#fancy:checked), .fancy .toggle)::after {
   left: calc(100% - 3.75 * var(--toggle-gap));
 }
-/* NOTE: By Using the :where() Pseudo class we reduce the specificity  */
 ```
 
 - A Function To Get The Theme From The Local Storage
