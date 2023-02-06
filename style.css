@@ -69,23 +69,23 @@ html:is(:has(#fancy:checked), .fancy) {
 html,
 body {
   height: 100%;
+  box-sizing: border-box;
 }
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
   font: inherite;
 }
 body {
-  --fs-base: 2.125rem;
   display: grid;
   place-items: center;
   background-color: var(--bg-primary);
   color: var(--txt-base);
   font-family: "League Spartan", sans-serif;
-  font-size: var(--fs-base);
+  font-size: 2.125rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -228,6 +228,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  isolation: isolate;
   border-radius: 100vh;
 }
 .toggle::after {
@@ -238,6 +239,7 @@ body {
   background-color: var(--key-accent);
   border-radius: 50%;
   transition: 350ms;
+  z-index: -1;
 }
 .toggle::after {
   left: calc(0.75 * var(--toggle-gap));
